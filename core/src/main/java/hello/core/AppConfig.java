@@ -16,20 +16,26 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     // 이전에는 MemberService에서 할당해줬지만 이제는 Config(설정)에서 한다.
     // @Bean 스프링 컨테이너에 등록
+
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
     @Bean
     public MemberService memberService() {
         // memberService는 key, MemberServiceImpl(memberRepository())를 value로 컨테이너에 등록이 된다.
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public static MemoryMemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), discountPolicy()                                                     );
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
