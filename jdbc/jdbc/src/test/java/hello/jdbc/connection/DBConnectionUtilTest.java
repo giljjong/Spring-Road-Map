@@ -1,4 +1,4 @@
-package hello.jdbc;
+package hello.jdbc.connection;
 
 import hello.jdbc.connection.DBConnectionUtil;
 import lombok.extern.slf4j.Slf4j;
