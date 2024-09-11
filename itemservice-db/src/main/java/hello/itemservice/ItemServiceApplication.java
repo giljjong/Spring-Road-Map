@@ -11,7 +11,10 @@ import org.springframework.context.annotation.Profile;
 // @Import 앞서 설정한 MemoryConfig를 설정 파일로 사용한다.
 // scanBasePackages -> 여기서는 컨트롤러만 컴포넌트 스캔을 하고 나머지는 직접 수동 등록한다.
 // 지정하지 않으면 모든 패키지에서 컴포넌트 스캔 한다.
-@Import(MemoryConfig.class)
+// @Import(MemoryConfig.class)
+// @Import(JdbcTemplateV1Config.class)
+// @Import(JdbcTemplateV2Config.class)
+@Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
