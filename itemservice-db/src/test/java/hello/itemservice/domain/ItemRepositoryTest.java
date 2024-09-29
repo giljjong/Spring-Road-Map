@@ -50,7 +50,8 @@ class ItemRepositoryTest {
     }
 
     // @Commit // 해당 애노테이션을 붙이면 Transaction을 걸지만 그래도 커밋하겠다는 의미 @Rollback(value=false)와 동일한 의미
-    // @Transactional
+    // @
+    // Transactional
     @Test
     void save() {
         //given
